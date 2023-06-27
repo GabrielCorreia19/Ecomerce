@@ -1,0 +1,33 @@
+@model UsuarioModel
+@{
+    ViewData["Title"] = "Editar Usuario";
+}
+<div class="text-center">
+    <h1 class="display-4">Editar Usuario</h1>
+</div>
+<form asp-controller="Usuario" asp-action="Atualizar" method="post">
+  <div class="mb-3">
+    <label>Nome:</label>
+    <input type="text" asp-for="Nome" class="form-control" id="exampleFormControlInput1" placeholder="Digite o nome do Usuario">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Sobrenome:</label>
+    <input type="text" asp-for="Sobrenome" class="form-control" id="exampleFormControlInput1" placeholder="Descreva o Usuario aqui">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email</label>
+    <input type="text" asp-for="Email" class="form-control" id="exampleFormControlInput1" placeholder="Descreva o Usuario aqui">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Senha</label>
+    <input type="text" asp-for="Senha" class="form-control" id="exampleFormControlInput1" placeholder="Descreva o Usuario aqui">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">SenhaConfirmacao</label>
+    <input type="number" asp-for="SenhaConfirmacao" class="form-control" id="exampleFormControlInput1" placeholder=" R$0,00 ">
+</div>
+
+  <button type="submit" class="btn btn-primary">Alterar</button>
+  <a role="submit" class="btn btn-secondary" asp-controller="Usuario" asp-action="ListarUsuarios">Voltar</a>
+  <input type="hidden" asp-for="IdUsuario"/>
+</form>

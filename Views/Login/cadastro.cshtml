@@ -1,0 +1,58 @@
+@{
+    ViewData["Title"] = "Criar Usuario";
+    Layout = "_LayoutDeslogado";
+}
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+            <!-- <h5 class="modal-title">Modal title</h5> -->
+            <h2 class="fw-bold mb-0">Cadastrar Usuário</h2>
+        </div>
+
+
+        <div class="modal-body p-5 pt-0">
+            <form asp-controller="Usuario" asp-action="Criar" method="post">                
+                <div class="form-floating mb-3">                                     
+                    <input type="text" autocomplete="off" asp-for="Nome" class="form-control rounded-3"
+                        id="floatingInputNome" placeholder="Nome Completo">                    
+                    <label for="floatingInputNome">Nome</label>
+                </div>
+
+                <div class="form-floating mb-3">                                   
+                    <select asp-for="Perfil" id="floatingSelect" class="form-select rounded-3">
+                        <option value="">Selecione</option>
+                      
+                    </select>               
+                    <label for="floatingSelect">Perfil</label>
+                </div>                        
+                                               
+
+                <div class="form-floating mb-3">
+                    <input type="email" autocomplete="off" asp-for="Email" class="form-control rounded-3"
+                        id="floatingInputEmail" placeholder="name@example.com">
+                    <label for="floatingInputEmail">Email</label>
+                </div>                
+
+                <div class="form-floating mb-3">
+                    <input type="email" autocomplete="off" asp-for="ConfirmeEmail" class="form-control rounded-3"
+                           id="floatingInputConfirmeEmail" placeholder="name@example.com">
+                    <label for="floatingInputConfirmeEmail">Confirme o email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" autocomplete="off" asp-for="Senha" class="form-control rounded-3"
+                        id="floatingInputSenha" placeholder="Senha" size="20" maxlength="20" minlength="8">
+                    <label for="floatingInputSenha">Senha</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" autocomplete="off" asp-for="ConfirmeSenha" class="form-control rounded-3"
+                        id="floatingInputConfirmeSenha" placeholder="Confirme a senha" size="20" maxlength="20" minlength="8">
+                    <label for="floatingInputConfirmeSenha">Confirme a senha</label>
+                </div>
+                <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Cadastrar</button>
+                <a class="w-100 mb-2 btn btn-lg rounded-3 btn-secondary" asp-controller="Login" asp-action="Index"
+                    role="button">Fazer Login</a>
+            </form>
+        </div>
+    </div>
+</div>

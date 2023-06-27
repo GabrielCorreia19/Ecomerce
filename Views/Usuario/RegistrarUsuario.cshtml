@@ -1,0 +1,37 @@
+
+@model UsuarioModel
+@{
+    ViewData["Title"] = "ListarUsuarios";
+}
+
+<div class="text-center">
+    <h1>Cadastrar Usuario</h1>
+</div>
+<form asp-action="RegistrarUsuario" asp-controller="Usuario" method="post">
+<div class="mb-3">
+    <label>Nome:</label>
+    <input type="text" asp-for="Nome" class="form-control" id="exampleFormControlInput1" placeholder="Digite o nome do Usuario">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Sobrenome:</label>
+    <input type="text" asp-for="Sobrenome" class="form-control" id="exampleFormControlInput1" placeholder="Descreva o Usuario aqui">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email</label>
+    <input type="text" asp-for="Email" class="form-control" id="exampleFormControlInput1" placeholder="Descreva o Usuario aqui">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Senha</label>
+    <input type="text" asp-for="Senha" class="form-control" id="exampleFormControlInput1" placeholder="Descreva o Usuario aqui">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Confirme sua senha</label>
+    <input type="number" asp-for="SenhaConfirmacao" class="form-control" id="exampleFormControlInput1" placeholder=" Digite sua senha ">
+</div>
+
+<div class="d-grid gap-2" role="group" aria-label="Basic example">
+    <button class="btn btn-primary">Adicionar</button>
+    <a asp-action="ListarUsuarios" asp-controller="Usuario" role="button" class="btn btn-danger">Cancelar</a>
+    </form>
+</div>
+</div>

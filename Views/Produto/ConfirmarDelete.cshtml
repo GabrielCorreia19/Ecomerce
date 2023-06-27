@@ -1,0 +1,12 @@
+@model ProdutoModel
+@{
+    ViewData["Title"] = "Cadastro";
+}
+<div class="text-center">
+    <h1>Deseja realmente deletar o item @Model.Nome?</h1>
+    <div class="d-grid gap-2" role="group" aria-label="Basic example">
+        <a asp-action="Deletar" asp-route-id="@Model.IdProduto" asp-controller="Produto" role="button" class="btn btn-primary">Confirmar</a>
+        <a asp-action="ListagemProduto" asp-controller="Produto" role="button" class="btn btn-danger">Cancelar</a>
+        <input type="hidden" asp-for="@Model.IdProduto">
+    </div>
+</div>

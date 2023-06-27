@@ -1,0 +1,28 @@
+@model WebStore.Models.ProdutoModel
+@{
+    ViewBag.Title = "Album - " + Model.Nome;
+ }
+<h2>@Model.Nome</h2>
+<p>
+    <img alt="@Model.Nome"
+src="@Model.LinkImagem" />
+</p>
+<div id="album-details">
+    <p>
+        <em>Produto:</em>
+        @Model.Nome
+    </p>
+    <p>
+        <em>Marca:</em>
+        @Model.Marca
+    </p>
+    <p>
+        <em>Price:</em>
+        @String.Format("{0:F}",
+Model.Preco)
+    </p>
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AdicionarCarrinho", 
+        "CarrinhoController", new { id = Model.IdProduto }, "")
+    </p>
+</div>

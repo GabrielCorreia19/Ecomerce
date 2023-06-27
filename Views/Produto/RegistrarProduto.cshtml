@@ -1,0 +1,51 @@
+
+@model ProdutoModel
+@{
+    ViewData["Title"] = "RegistrarProduto";
+}
+<div class="text-center">
+    <h1>Cadastrar Produto</h1>
+</div>
+<form asp-action="RegistrarProduto" asp-controller="Produto" method="post">
+<div class="mb-3">
+    <label>Nome:</label>
+    <input type="text" asp-for="Nome" class="form-control" id="exampleFormControlInput1" placeholder="Digite o nome do produto">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Descrição:</label>
+    <input type="text" asp-for="Descricao" class="form-control" id="exampleFormControlInput1" placeholder="Descreva o produto aqui">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Categoria</label>
+    <input type="text" asp-for="Categoria" class="form-control" id="exampleFormControlInput1" placeholder="Descreva o produto aqui">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Marca</label>
+    <input type="text" asp-for="Marca" class="form-control" id="exampleFormControlInput1" placeholder="Descreva o produto aqui">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Preço</label>
+    <input type="number" asp-for="Preco" class="form-control" id="exampleFormControlInput1" placeholder=" R$0,00 ">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Quantidade em Estoque</label>
+    <input type="number" asp-for="QuantidadeEmEstoque" class="form-control" id="exampleFormControlInput1" placeholder=" 0 ">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">LinkImagem</label>
+    <input type="text" asp-for="LinkImagem" class="form-control" id="exampleFormControlInput1" placeholder=" Link aq ">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">base64</label>
+    <input type="text" asp-for="base64" class="form-control" id="exampleFormControlInput1" placeholder=" Link aq ">
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Extension</label>
+    <input type="text" asp-for="LinkImagem" class="form-control" id="exampleFormControlInput1" placeholder=" Link aq ">
+</div>
+<div class="d-grid gap-2" role="group" aria-label="Basic example">
+    <button class="btn btn-primary">Adicionar</button>
+    <a asp-action="ListagemProduto" asp-controller="Produto" role="button" class="btn btn-danger">Cancelar</a>
+    </form>
+</div>
+</div>

@@ -1,0 +1,47 @@
+@model List<UsuarioModel>
+@{
+    ViewData["Title"] = "ListarUsuarios";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <h1 style="font-family:Arial, Helvetica, sans-serif">Lista de usuarios</h1>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a asp-action="RegistrarUsuario" asp-controller="Usuario" role="button" class="btn btn-success">Adicionar usuario</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Email</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            { var i = 1;
+                foreach (var usuario in Model)
+                {
+                    <tr>
+                        <th scope="row">@i</th>
+                        <td>@usuario.Nome</td>
+                        <td>@usuario.Sobrenome</td>
+                        <td>@usuario.Email</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a asp-action="AtualizarUsuario" asp-route-id="@usuario.IdUsuario" asp-controller="Usuario" role="button" class="btn btn-primary">Editar</a>
+                                <a asp-action="ConfirmarExclusao" asp-route-id="@usuario.IdUsuario"  asp-controller="Usuario" role="button"
+                                    class="btn btn-danger">Deletar</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    i++;
+                }
+            }
+        </tbody>
+    </table>
+</div>
